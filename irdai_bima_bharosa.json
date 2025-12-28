@@ -1,0 +1,34 @@
+{
+  "portal_id": "irdai_bima_bharosa",
+  "portal_name": "IRDAI Bima Bharosa",
+  "official_form_url": "https://bimabharosa.irdai.gov.in/RegComplaint/RegisterComplaint",
+  "fields": [
+    {"id": "name", "label": "Name", "type": "text", "required": true},
+    {"id": "mobile", "label": "Mobile Number", "type": "text", "required": true},
+    {"id": "email", "label": "Email (optional)", "type": "text", "required": false},
+
+    {"id": "pincode", "label": "Pin Code", "type": "text", "required": true},
+    {"id": "district", "label": "District", "type": "text", "required": true},
+    {"id": "state", "label": "State", "type": "text", "required": true},
+
+    {"id": "complaint_against", "label": "Complaint Against (Insurance Company / Unregistered Entity / Insurance Intermediary)", "type": "text", "required": true},
+    {"id": "irdai_department", "label": "IRDAI Department Name", "type": "text", "required": true},
+
+    {"id": "insurance_company_name", "label": "Name of Insurance Company (as shown on portal)", "type": "text", "required": true},
+    {"id": "policy_type", "label": "Policy Type", "type": "text", "required": true},
+
+    {"id": "is_claim_related", "label": "Is this claim-related?", "type": "bool", "required": true},
+    {"id": "identifier_type", "label": "Identifier Type (Policy/Proposal/Certificate/Claim)", "type": "text", "required": true,
+      "show_if": {"field": "is_claim_related", "equals": true}
+    },
+    {"id": "identifier_value", "label": "Policy/Proposal/Certificate/Claim Number", "type": "text", "required": true,
+      "show_if": {"field": "is_claim_related", "equals": true}
+    },
+
+    {"id": "complaint_details", "label": "Complaint Details (max 4000 chars)", "type": "text", "required": true}
+  ],
+  "attachments": {
+    "allowed_types": ["PDF", "JPG", "JPEG", "PNG"],
+    "max_size_mb": 10
+  }
+}
